@@ -18,9 +18,11 @@
         lottie.loadAnimation({
           container: document.getElementById('lottie'),
           renderer: 'svg',
-          loop: flase,
+          loop: false,
           autoplay: true,
           animationData
+        }).addEventListener('complete', function() {
+          window.parent.postMessage({ data: ['lottieEnd'] }, '*');
         });
       });
   </script>
